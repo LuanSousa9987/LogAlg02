@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1.2</title>
+
+
+
+</head>
+
+<body>
+    <div id="output"></div>
+
+    <script>
+        //Código Javascript
+
+        var Nome = prompt("Digite o nome");
+
+        var tempoServico = parseFloat(prompt("Tempo de Serviço"));
+
+        var salarioMedio = parseFloat(prompt("Salário"));
+
+        var idade = parseFloat(prompt("Idade"));
+
+        dados = `
+Nome: ${Nome} <br>
+Tempo de serviço: ${tempoServico} <br>
+Salário médio: ${salarioMedio} <br>
+Idade: ${idade} <br>
+
+`;
+
+        var abono = 0;
+
+        if (tempoServico > 12) {
+            abono = salarioMedio * 10 / 100;
+
+        }
+        abono = abono + idade;
+        
+        var proximoSalario = salarioMedio + abono;
+
+        dados += `
+<hr>
+Abono salarial: ${abono}<br>
+Próximos salários: ${proximoSalario}<br>
+
+`;
+
+        var inss = 0;
+
+        if (proximoSalario <= 1500) {
+            inss = proximoSalario * 5 / 100;
+        } else if (proximoSalario <= 2500) {
+            inss = proximoSalario * 10 / 100;
+
+        } else if (proximoSalario <= 3500) {
+            inss = proximoSalario * 13 / 100;
+
+        } else {
+            inss = proximoSalario * 15 / 100;
+
+        }
+
+        dados += `contribuição para o INSS: ${inss}`;
+
+
+
+
+
+
+        output.innerHTML = dados;
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
